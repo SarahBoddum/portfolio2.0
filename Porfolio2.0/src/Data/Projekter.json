@@ -1,0 +1,8 @@
+{
+    "projekter": [
+        {
+            "id": "projekt-1",
+            "tags": ["react", "bæredygtigt webdesign", "UI", "billedoptimering"]
+        }
+    ]
+}

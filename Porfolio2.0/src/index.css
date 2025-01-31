@@ -1,0 +1,931 @@
+@font-face {
+    font-family: 'agraham';
+    src: url('./assets/agraham/Agraham.otf') format('opentype');
+    /* Brug format('woff') eller andre formater afhængigt af fonttypen */
+  }
+
+@font-face {
+    font-family: 'antic-didone';
+    src: url('./assets/antic-didone/AnticDidone-Regular.ttf') format('opentype');
+    /* Brug format('woff') eller andre formater afhængigt af fonttypen */
+  }
+
+*{
+    margin: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FBFBFB;
+}
+h1{
+    font-family: 'agraham';
+    color: #FFBA44;
+    font-size: 9vw;
+    font-weight: lighter;
+
+}
+h2{
+    font-family: 'agraham';
+    color: black;
+    font-size: 6vw;
+    font-weight: lighter;
+}
+h3{
+    font-family: 'antic-didone';
+    font-size: 2.5vw;
+    font-weight: lighter;
+}
+p{
+    font-family: 'antic-didone';
+    font-size: 1.2vw;
+}
+li{
+    font-family: 'antic-didone';
+    font-size: 1vw;
+}
+.mobil{
+    display: none;
+}
+.laptop{
+    display: block;
+}
+
+/*------Navigation--------------*/
+.navigation{
+    height: 70px;
+    background-color: #FFE0EC;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0; 
+    padding-left: 1vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  #burger-menu{
+    display: none;
+  }
+  
+  .navlink{
+    font-family: 'antic-didone';
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 18px;
+    margin-left: 6vw;
+
+  }
+  .navlink:hover{
+    color: #DF601C;
+    transition: 0.3s;
+  }
+  
+  #menu{
+    width: fit-content;
+    margin-right: 5vw;
+    margin-top: 20px;
+  }
+  #xul{
+    display: flex;
+    width: 100%;   
+    justify-content: space-between;
+    width: 40vw;
+  }
+  #logo{
+    width: 90px;
+    margin-left: -7vw;
+  }
+  #logo:hover{
+    width: 95px;
+    margin-left: -7.2vw;
+    margin-top: -5px;
+    transition: 0.3s ease-in-out;
+  }
+
+  /*----------Forside--------*/
+  .ForsideTop{
+    padding-top: 70px;
+    height: fit-content;
+    width: 100VW;
+    display: flex;
+  }
+  #FTvenstre{
+    width: 55vw;
+    height: 90vh;
+    background-image: url('./assets/moi2.png');
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 11vw;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  #FTvenstre h2{
+    margin-left: 2vw;
+    padding-top: 40vh;
+    font-size: 8vw;
+  }
+  #FThøjre{
+    width: 63vw;
+    margin-left: -8vw;
+    height: fit-content;
+    overflow: hidden;
+  }
+  #port{
+    font-size: 16vw;
+    margin-top: -15vh;
+  }
+  #evner{
+    display: flex;
+    width: 40vw;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: -20vh;
+  }
+  #folio{
+    margin-left: 22vw;
+    font-size: 12vw;
+    margin-top: -10vh;
+  }
+  #txtbox01{
+    width: 55vw;
+    display: flex;
+    margin: auto;
+    margin-bottom: 4vh;
+  }
+ .storh3{
+    margin-right: 2vw;
+    font-size: 12vw;
+  }
+  #txtbox01 div p{
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+  }
+  .btn{
+    width: fit-content;
+    background-color: #DFF1FF;
+    padding: 1vh 4vw;
+    font-family: 'antic-didone';
+    font-size: 1vw;
+    text-decoration: none;
+    color: black;
+    border-radius: 1.5vw;
+    border: #F389AD 1px solid;
+  }
+  .btn:hover{
+    background-color: transparent;
+    background-image: url(./assets/gradient.png);
+    background-size: cover;
+    color: #F389AD;
+
+  }
+  #forside-karrusel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin-top: 2vh;
+  }
+  
+  /* Grundlæggende stil for hvert element */
+  .FKramme {
+    position: absolute;
+    width: 70vw;
+    height: fit-content;
+    transition: transform 0.5s ease, opacity 0.5s ease, scale 0.5s ease;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    text-align: center;
+    margin-top: 2vh;
+  }
+  .FKramme h3{
+    color: black;
+  }
+  .FKramme h3:hover{
+    color: #F389AD;
+  }
+  
+  /* Aktiv div i midten */
+  .FKramme.active {
+    width: 70vw;
+    height: 50vh;
+    transform: translateX(0) scale(1.1);
+    opacity: 1;
+    z-index: 3;
+  }
+  
+  /* Div til venstre */
+  .FKramme.left {
+    transform: translateX(-70vw) scale(0.9);
+    opacity: 0.7;
+    z-index: 2;
+  }
+  
+  /* Div til højre */
+  .FKramme.right {
+    transform: translateX(70vw) scale(0.9);
+    opacity: 0.7;
+    z-index: 2;
+  }
+  .FKimg{
+    width: 100%;
+    margin-bottom: 2vh;
+  }
+  .FKimg:hover{
+    filter: brightness(105%);
+    transition: 0.3s ease-in-out;
+  }
+  #txtbox02{
+    width: 100vw;
+    height: 75vh;
+    background-image: url('./assets/gradient-2.png');
+    background-size: 100vw, 80vh;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    display: flex;
+    background-repeat: no-repeat;
+  }
+  #Fimg2{
+    height: 90vh;
+    margin-top: -15vh;
+    margin-left: -5vw;
+  }
+  #textramme02{
+    width: 50vw;
+    margin-left: -17vw;
+    display: flex;
+  }
+  #txt02-01 h1{
+    color: black;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    line-height: 1.2;
+  }
+  #txt02-01 p{
+    margin-left: 9vw;
+    margin-bottom: 1.5vh;
+    margin-top: 1.5vh;
+  }
+  #txt02-01 li{
+    margin-left: 9vw;
+    line-height: 1.5;
+  }
+  #txt02-02{
+    margin-top: 15vh;
+    margin-left: 5vw;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    justify-content: space-between;
+  }
+  #txt03{
+    width: 100vw;
+    height: fit-content;
+    margin-bottom: 15vh;
+  }
+  #mailtxt{
+    display: flex;
+    width: 50vw;
+    margin-left: 20vw;
+  }
+  #mailtxt p{
+    margin-top: 7vh;
+  }
+  #mail{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    text-decoration: none;
+  }
+  #mail h1{
+    font-size: 4vw;
+  }
+  #snabela{
+    font-family: 'antic-didone';
+    font-size: 7vw;
+    margin-top: 4vh;
+    color: #FFBA44;
+  }
+  #mail h1:hover{
+    color: #F389AD;
+    transition: 0.3s ease-in-out;
+  }
+ 
+  /*----------------OM------------*/
+  #Omtop{
+    padding-top: 70px;
+    width: 100vw;
+    height: fit-content;
+    background-image: url('./assets/rst5.jpg');
+    background-repeat: no-repeat;
+    background-size: 65vw;
+    background-position-x: -5vw;
+    padding-bottom: 10VH;
+  }
+  #h3-ramme{
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    margin-left: 48vw;
+    margin-top: 6vw;
+  }
+  #h3-ramme h3{
+    font-size: 1.5vw;
+  }
+  #Om{
+    line-height: 2;
+    font-size: 17vw;
+    margin-left: 37vw;
+    margin-top: -15vh;
+  }
+  #Mig{
+    margin-top: -30vh;
+    padding-left: 47vw;
+    font-size: 14vw;
+  }
+  .koncept{
+    width: 100vw;
+    height: fit-content;
+  }
+  .konceptTxt{
+    width: 85vw;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+  }
+  .konceptTxt p{
+    margin-top: 10vh;
+    width: 38vw;
+  }
+  .konceptTxt h2{
+    width: 43vw;
+    text-align: right;
+  }
+  .konceptImg{
+    width: 80vw;
+    display: flex;
+    gap: 2.5vw;
+    margin: auto;
+    direction: rtl;
+    margin-bottom: 10vh;
+  }
+  .Ovalimg{
+    width: 25vw;
+    height: auto;
+    object-fit: contain;
+    border-radius: 13vw;
+  }
+  .cirkelImg{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 13vw;
+    margin-top: 5vh;
+  }
+  #soger{
+    background-color: #F0F0FF;
+    direction: rtl;
+    padding-right: 5vw;
+    padding-bottom: 10vh;
+    margin-bottom: 10vh;
+  }
+  #h2soger{
+    width: 55vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+ #sogertxt{
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+ }
+ #sogertxt p{
+    width: 50vw;
+    text-align: left;
+}
+#CV h2{
+    line-height: 2;
+    margin-left: 20vw;
+}
+#cv-laptop{
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: -50vh;
+}
+#cv-tablet{
+    display: block;
+}
+#cv-mobil{
+    display: none;
+}
+
+  @media only screen and (max-width: 1100px){
+    .mobil{
+        display: block;
+    }
+    .laptop{
+        display: none;
+    }
+    h3{
+        font-size: 5vw;
+    }
+    p{
+        font-size: 2.2vw;
+    }
+    /*-------------burger---------------*/
+    .navlink{
+      font-size: 4.5vw;
+      display: flex;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      margin-left: 0vw;
+    }
+    .navigation{
+      padding-left: 0vw;
+      height: 90px;
+
+    }
+   #logo{
+    margin-left: 0vw;
+    width: 120px;
+    height: fit-content;
+    margin-top: -1vh;
+    z-index: 3;
+   }
+    #burger-menu{
+        display: block;
+        margin-left: 5vw;
+        z-index: 1;
+    }
+    #burger-menu span{
+        margin-top: 30px;
+        margin-right: 30px;
+    }
+    #burger-menu span,
+    #burger-menu span::before,
+    #burger-menu span::after {
+        background: black;
+        display: block;
+        height: 3px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+    }
+    #burger-menu span:before,
+    #burger-menu span:after {
+            content: "";
+    }
+    #burger-menu span:before {
+        left: 0px;
+        top: -15px;
+        width: 45px;
+    }
+    #burger-menu span {
+        right: 0px;
+        top: 13px;
+        width: 45px;
+    }
+    #burger-menu span:after {
+        left: 0px;
+        top: 15px;
+        width: 45px;
+    }
+    #burger-menu.close span:before {
+        top: 0px;
+        transform: rotate(90deg);
+        width: 45px;
+    }
+    #burger-menu.close span {
+        transform: rotate(-45deg);
+        top: 13px;
+        width: 45px;
+    }
+    #burger-menu.close span:after {
+        top: 0px;
+        left: 0;
+        transform: rotate(90deg);
+        opacity: 0;
+        width: 0;
+    }
+  
+    #menu {
+        z-index: 1;
+        min-width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    #menu.overlay {
+        visibility: visible;
+        opacity: 95%;
+        margin-top: 80px;
+        background-image: url('./assets/gradient.png');
+        background-size: cover;
+    }
+    #xul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        text-align: left;
+        align-items: center;
+        justify-content: unset;
+        width: fit-content;
+        margin: auto;
+        margin-top: 5vh;
+    }
+    .no-scroll {
+      overflow: hidden;
+      height: 100vh; /* Lås højde til viewport */
+    }
+    .sprinkle{
+        font-size: 20vw;
+        color: black;
+        margin-bottom: -16vh;
+    }
+/*--------FORSIDE-----------*/
+.ForsidetopMobil{
+    height: fit-content;
+    padding-top: 100px;
+    overflow: hidden;
+    z-index: 1;
+}
+.ForsidetopMobil h2{
+    font-size: 7vw;
+    margin-left: 2vw;
+}
+.ForsidetopMobil h1{
+    font-size: 18vw;
+    margin-top: -15vh;
+    margin-left: 25vw;
+}
+.Forsidetop2Mobil{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    margin-bottom: 10vh;
+}
+.moimobil{
+    width: 100vw;
+    margin-left: -32vw;
+    margin-top: -45vh;
+}
+#FT2txt{
+    margin-left: -20vw;
+    width: fit-content;
+    overflow: hidden;
+    margin-top: -4vh;
+}
+#FT2txt h1{
+    font-size: 16vw;
+    margin-top: -5vh;
+    margin-left: -1vw;
+}
+#FT2txt p{
+  font-size: 3.5vw;
+  margin-bottom: 3vh;
+}
+#p2{
+    margin-left: 6vw;
+}
+#p3{
+    margin-left: 12vw;
+}
+#txtbox01{
+    width: 70vw;
+}
+#txtbox01 h3{
+    font-size: 23vw;
+    margin-right: 6vw;
+}
+#txtbox01 div p{
+    margin-top: 3.5vh;
+}
+.btn{
+    font-size: 2.2vw;
+    border-radius: 3vw;
+    padding: 1vh 7vw;
+}
+#txtbox02{
+    height: fit-content;
+    flex-direction: column;
+    margin-top: 8vh;
+    background-size: cover;
+}
+#Fimg2{
+    height: auto;
+    width: 90vw;
+
+}
+#textramme02{
+    margin-left: 10vw;
+    width: 80vw;
+    margin-top: -8vh;
+    margin-bottom: 5vh;
+}
+#txt02-02{
+    margin-top: 20vh;
+    margin-left: 10vw;
+}
+#txt02-01 li{
+    font-size: 2.2vw;
+}
+#txt02-01 h1{
+  font-size: 15vw;
+}
+#txt02-02{
+    height: 20vh;
+}
+#mailtxt{
+    width: 70vw;
+}
+#mailtxt p{
+    margin-top:3vh;
+  }
+
+/*-----------OM-------------*/
+#Omtop{
+    background-size: 70vh;
+    background-position-x: -5vw; 
+}
+#h3-ramme{
+   flex-direction: column;
+   text-align: right;
+   margin-left: 45vw;
+}
+#h3-ramme h3{
+    font-size: 3vw;
+    margin-bottom: 2vh;
+  }
+#Om{
+    margin-top: 20vh;
+    font-size: 25vw;
+    margin-left: 20vw;
+}
+#Mig{
+    margin-top: -20vh;
+}
+.konceptTxt{
+    flex-direction: column;
+}
+.konceptTxt p{
+    margin-top: 0vh;
+    width: 80vw;
+    margin: auto;
+  }
+
+.konceptTxt h2{
+    font-size: 10vw;
+    margin-top: -10vh;
+}
+
+#cv-laptop{
+    display: none;
+}
+#cv-tablet{
+    display: block;
+    width: 97.5vw;
+    margin-left: 2.5vw;
+    margin-top: -20vh;
+}
+#cv-mobil{
+    display: none;
+}
+}
+
+@media only screen and (max-width: 800px){
+
+    .mobil{
+        display: block;
+    }
+    .laptop{
+        display: none;
+    }
+    p{
+        font-size: 4vw;
+    }
+    li{
+        font-size: 4vw;
+    }
+    /*-------------burger---------------*/
+    .navlink{
+      font-size: 7vw;
+      padding-top: 2.5vh;
+      padding-bottom: 2.5vh;
+    }
+    .navigation{
+      height: 60px;
+    }
+    #burger-menu span{
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    #burger-menu span:before {
+        top: -10px;
+        width: 27px;
+    }
+    #burger-menu span {
+        top: 8px;
+        width: 27px;
+    }
+    #burger-menu span:after {
+        top: 10px;
+        width: 27px;
+    }
+    #burger-menu.close span:before {
+        width: 27px;
+    }
+    #burger-menu.close span {
+        transform: rotate(-45deg);
+        top: 13px;
+        width: 27px;
+    }
+    #burger-menu.close span:after {
+        top: 0px;
+        left: 0;
+        transform: rotate(90deg);
+        opacity: 0;
+        width: 0;
+    }
+    #logo{
+      width: 15vw;
+      height: fit-content;
+    }
+  
+    #menu.overlay {
+        margin-top: 52px;
+    }
+    #xul {
+        margin-top: 30px;
+    }
+    .sprinkle{
+        margin-bottom: -2vh;
+    }
+    /*--------_FORSIDE-------------*/
+    
+    .ForsidetopMobil{
+        height: fit-content;
+        padding-top: 50px;
+        overflow: hidden;
+        z-index: 1;
+        width: 100vw;
+    }
+    .ForsidetopMobil h2{
+        font-size: 15vw;
+    }
+    .ForsidetopMobil h1{
+        font-size: 28vw;
+        margin-top: -15vh;
+        margin-left: 12vw;
+    }
+    .Forsidetop2Mobil{
+        width: 100vw;
+        height: fit-content;
+        display: flex;
+
+    }
+    .moimobil{
+        width: 150vw;
+        margin-left: -60vw;
+        margin-top: -37vh;
+    }
+    #FT2txt{
+        margin-left: -55vw;
+        overflow: hidden;
+        margin-top: -4vh;
+        overflow: hidden;
+    
+    }
+    #FT2txt h1{
+        font-size: 22vw;
+        margin-top: -5vh;
+        margin-left: -4vw;
+    }
+    #FT2txt p{
+      font-size: 5vw;
+      padding-left: 8vw;
+      margin-bottom: 3vh;
+    }
+    #p2{
+        margin-left: 6vw;
+    }
+    #p3{
+        margin-left: 12vw;
+    }
+    #txtbox01{
+        width: 90vw;
+    }
+    #txtbox01 h3{
+        font-size: 30vw;
+        margin-right: 2vw;
+    }
+   
+    .btn{
+        font-size: 3.5vw;
+        border-radius: 4vw;
+        padding: 0.7vh 9vw;
+    }
+    #forside-karrusel-wrapper{
+        height: 60vh;
+    }
+    #textramme02{
+        flex-direction: column;
+    }
+    #txt02-01 li{
+        font-size: 3.5vw;
+    }
+    #txt02-01 h1{
+        font-size: 25vw;
+    }
+    #txt02-02 h3{
+        font-size: 25vw;
+    }
+    #txt02-02{
+        height: 20vh;
+        margin-top: 0vh;
+        margin: auto;
+    }
+    #mailtxt{
+        width: 70vw;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 15vw;
+        margin-bottom: 5vh;
+    }
+    #mailtxt h3{
+        font-size: 25vw;
+    }
+    /*----------OM-------------*/
+    #Omtop{
+        margin-top: 10vh;
+        background-size: 69vh;
+        background-position-x: -57vw; 
+    }
+    #h3-ramme h3{
+        font-size: 5vw;
+      }
+    #Om{
+        margin-top: 20vh;
+        font-size: 30vw;
+        margin-left: 10vw;
+    }
+    #Mig{
+        margin-top: -15vh;
+        font-size: 23vw;
+        padding-left: 30vw;
+    }
+    .konceptTxt h2{
+        font-size: 15vw;
+    }
+    .konceptImg{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .Ovalimg{
+        width: 50vw;
+        border-radius: 25vw;
+    }
+    .cirkelImg{
+        width: 50vw;
+        height: 50vw;
+        border-radius: 25vw;
+    }
+    #soger h2{
+        font-size: 10vw;
+        line-height: 2.2;
+    }
+    #sogertxt{
+        flex-direction: column;
+    }
+    #sogertxt p{
+        width: 80vw;
+        margin-top: 7vh;
+    }
+    #CV h2{
+        font-size: 10vw;
+        margin-left: 4vw;
+    }
+    #cv-laptop{
+        display: none;
+    }
+    #cv-tablet{
+        display: none;
+    }
+    #cv-mobil{
+        display: block;
+        width: 95vw;
+        margin-left: 2.5vw;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+    }
+}
