@@ -4,22 +4,23 @@ import oomhjakke from '../assets/oomhJakke.jpg';
 import cvLaptop from '../assets/sløjfeCV-laptop.svg';
 import cvTablet from '../assets/sløjfeCV-tablet.svg';
 import cvMobil from '../assets/sløjfeCV-mobil.svg';
+import { Link } from "react-router-dom";
 
 const Om = () => {
     return (
         <div>
             <div id="Omtop">
                 <div id="h3-ramme">    
-                    <h3>SARAH</h3>
-                    <h3>HVAD JEG SØGER</h3>
-                    <h3>CV</h3>
-                    <h3>ANDRE SIGER...</h3>
+                    <Link to="/Om#koncept" className="h3link">SARAH</Link>
+                    <Link to="/Om#soger" className="h3link">HVAD JEG SØGER</Link>
+                    <Link to="/Om#CV" className="h3link">CV</Link>
+                    <Link to="/Om#siger" className="h3link">ANDRE SIGER...</Link>
                 </div>
                 <h1 id="Om">Om</h1>
                 <h1 id="Mig">mig</h1>
             </div>
 
-            <div className="koncept">
+            <div className="koncept" id="koncept">
                 <div className="konceptTxt">
                     <h2>Sarah</h2>
                     <p>I januar 2025 blev jeg færdig med min anden uddannelse - nu som multimediedesigner. Jeg har mange års designerfaring, da jeg også har en PBA i Fashion Design fra 2015 og har været selvstændig designer under navnet OutOfMyHand siden da. I den tid har jeg også fået et par børn og jeg venter mit tredje til april 2025. Jeg har altid været effektiv, men min oplevelse er, at jeg er blevet endnu mere målrettet og arbejdsom efter jeg er blevet mor, fordi jeg ikke længere har ubegrænset tid til mine egne projekter
@@ -54,7 +55,40 @@ const Om = () => {
                 <img src={cvMobil} alt="cv formet som en sløjfe" id="cv-mobil"></img>
             </div>
 
-            <div id=""></div>
+            <div id="siger">
+                <h2>Andre siger...</h2>
+                <div id="quotes">
+                    <div className="anbefaling" id="eaaa">
+                        <h3>ERHVERVSAKADEMI <br />AARHUS</h3>
+                        <p className="underoverskrift">Lærerteamet</p>
+                        <p>
+                        Sarah er en dygtig, kreativ og ambitiøs studerende, som favner bredt i alle uddannelsens aspekter. Sarah er kendetegnet ved at være energisk og arbejdsom, samtidig med at hun vægter det gode samarbejde højt. 
+                        <br /><br />
+                        Sarah er kritisk omkring hvad hun vil arbejde med, og hun vil noget, som ikke skader planeten [jf. at have valgt modebranchen fra] - uden at give afkald på det æstetiske element. Vi ønsker Sarah alt det bedste fremover. 
+                        </p>
+                    </div>
+              
+                    <div className="anbefaling" id="moluu">
+                        <h3>KATHRINE JUUL</h3>
+                        <p className="underoverskrift">Praktikleder moluu og kollega</p>
+                        <p>
+                        Jeg har haft fornøjelsen af at have Sarah Boddum i praktik i 9 uger. Sarah har været en stor hjælp på mange måder. Hun er håndværksmæssigt dygtig og har derfor kunnet arbejde selvstændigt med en stillet opgave og har afleveret et godt stykke arbejde. Hun er meget engageret, tålmodig og arbejdsom. 
+                        <br /><br />
+                        Derudover er hun en skøn kollega - med let til smil/grin samt en stor interesse i verden omkring hende- så der er altid grobund for en interessant samtale. Jeg giver hermed Sarah mine varmeste anbefalinger.
+                        </p>
+                    </div>
+
+                    <div className="anbefaling" id="moluu">
+                        <h3>KATHRINE JUUL</h3>
+                        <p className="underoverskrift">Praktikleder moluu og kollega</p>
+                        <p>
+                        Jeg har haft fornøjelsen af at have Sarah Boddum i praktik i 9 uger. Sarah har været en stor hjælp på mange måder. Hun er håndværksmæssigt dygtig og har derfor kunnet arbejde selvstændigt med en stillet opgave og har afleveret et godt stykke arbejde. Hun er meget engageret, tålmodig og arbejdsom. 
+                        <br /><br />
+                        Derudover er hun en skøn kollega - med let til smil/grin samt en stor interesse i verden omkring hende- så der er altid grobund for en interessant samtale. Jeg giver hermed Sarah mine varmeste anbefalinger.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );

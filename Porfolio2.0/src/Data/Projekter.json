@@ -1,8 +1,16 @@
 {
     "projekter": [
         {
-            "id": "projekt-1",
-            "tags": ["react", "bæredygtigt webdesign", "UI", "billedoptimering"]
+            "id": "project1",
+            "tags": ["frontend", "bæredygtigt webdesign", "grafisk design", "billedoptimering", "content"]
+        },
+        {
+            "id": "project2",
+            "tags": ["frontend", "content"]
+        },
+        {
+            "id": "project3",
+            "tags": ["frontend", "grafisk design"]
         }
     ]
 }

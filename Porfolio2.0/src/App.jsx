@@ -6,6 +6,7 @@ import Projekter from './pages/Projekter';
 import Om from './pages/Om';
 import Kontakt from './pages/Kontakt';
 import Forside from './pages/Forside';
+import Walther from './pages/Walther';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/Projekter" element={<Projekter />} />
         <Route path="/Om" element={<Om/>} />
         <Route path="/Kontakt" element={<Kontakt/>} />
+
+        <Route path="/Walther" element={<Walther/>} />
      </Routes>
     </BrowserRouter>
     </>
